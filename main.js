@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function (){
+document.addEventListener("DOMContentLoaded", function () {
 
 	//! Кнопки на главной
 	const catalogBtn = document.getElementById("catalogBtn");

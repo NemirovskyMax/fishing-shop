@@ -10,22 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	let visibleLimit = 6;
 	let currentCategory = "all";
 
-	// Функция для очистки фона скелетона (Новая!)
-	function clearSkeletons() {
-		cards.forEach(card => {
-			const img = card.querySelector('img');
-			// Если картинка загружена, убираем фон сразу
-			if (img.complete) {
-				img.style.background = 'none';
-			} else {
-				// Если еще грузится, ждем события load
-				img.addEventListener('load', () => {
-					img.style.background = 'none';
-				});
-			}
-		});
-	}
-
 	// Основная функция фильтрации
 	function applyFilters() {
 		const query = searchInput.value.toLowerCase().trim();
@@ -42,13 +26,18 @@ document.addEventListener("DOMContentLoaded", function () {
 				foundAny = true;
 
 				if (visibleInDOM < visibleLimit) {
+					// Если карточка была скрыта, подготавливаем её к анимации
 					if (card.style.display !== "flex") {
 						card.style.display = "flex";
+						// Убираем класс, чтобы сбросить состояние перед анимацией
 						card.classList.remove("show-anim");
+
+						// Запускаем анимацию в следующем кадре отрисовки
 						requestAnimationFrame(() => {
 							card.classList.add("show-anim");
 						});
 					} else {
+						// Если она уже была видна, просто убеждаемся, что класс на месте
 						card.classList.add("show-anim");
 					}
 					visibleInDOM++;
@@ -72,15 +61,13 @@ document.addEventListener("DOMContentLoaded", function () {
 		if (notFound) {
 			notFound.style.display = foundAny ? "none" : "block";
 		}
-
-		// Вызываем очистку скелетонов после того, как карточки отобразились
-		clearSkeletons();
 	}
 
 	// Поиск по кнопке
 	searchBtn.addEventListener("click", () => {
 		visibleLimit = 6;
 		applyFilters();
+
 		window.scrollTo({ top: 0, behavior: "smooth" });
 	});
 
@@ -102,6 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			currentCategory = button.dataset.category || "all";
 			visibleLimit = 6;
 			applyFilters();
+
 			window.scrollTo({ top: 0, behavior: "smooth" });
 		});
 	});
@@ -125,8 +113,8 @@ document.addEventListener("DOMContentLoaded", function () {
 		window.scrollTo({ top: 0, behavior: "smooth" });
 	});
 
-	// Запускаем первую фильтрацию
 	applyFilters();
 
-	console.log("js Работает со скелетонами");
+	console.log("js Работает");
+
 });

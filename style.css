@@ -468,6 +468,20 @@ body {
 	object-fit: cover;
 	margin-bottom: 15px;
 	border-radius: 8px;
+
+	background: linear-gradient(90deg, #f0f0f0 25%, #e5e5e5 50%, #f0f0f0 75%);
+	background-size: 200% 100%;
+	animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+	0% {
+		background-position: 200% 0;
+	}
+
+	100% {
+		background-position: -200% 0;
+	}
 }
 
 .catalog-card h3 {
@@ -692,30 +706,30 @@ body {
 		text-align: center;
 	}
 
-	.catalog-container{
+	.catalog-container {
 		flex-direction: column;
 		padding: 120px 15px 40px;
 		gap: 20px;
 	}
 
-	.catalog-sidebar{
+	.catalog-sidebar {
 		width: 100%;
 		padding: 15px;
 		box-sizing: border-box;
 	}
 
-	.catalog-sidebar h3{
+	.catalog-sidebar h3 {
 		font-size: 18px;
 		margin-bottom: 15px;
 		text-align: center;
 	}
 
-	.catalog-sidebar h3::after{
+	.catalog-sidebar h3::after {
 		width: 60px;
 		margin: 8px auto;
 	}
 
-	.catalog-menu{
+	.catalog-menu {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 8px;
@@ -723,7 +737,7 @@ body {
 	}
 
 	.category-btn,
-	.category-btnall{
+	.category-btnall {
 		width: auto;
 		padding: 8px 15px;
 		font-size: 13px;
@@ -732,7 +746,7 @@ body {
 		text-align: center;
 	}
 
-	.catalog-main{
+	.catalog-main {
 		display: grid !important;
 		grid-template-columns: 1fr 1fr;
 		gap: 15px 5px;
@@ -742,7 +756,7 @@ body {
 		box-sizing: border-box;
 	}
 
-	.catalog-card{
+	.catalog-card {
 		width: 100%;
 		max-width: none;
 		min-width: unset;
@@ -754,42 +768,50 @@ body {
 		justify-content: space-between;
 	}
 
-	.catalog-card img{
+	.catalog-card img {
 		width: 100%;
 		height: auto;
 		max-height: 120px;
 		object-fit: contain;
 	}
 
-	.catalog-card .price{
+	.catalog-card .price {
 		font-size: 14px;
 	}
 
-	.show-more-container{
+	.show-more-container {
 		grid-column: 1 / -1;
 		display: flex;
-		justify-content:center;
+		justify-content: center;
 		width: 100%;
 		margin-top: 20px;
 	}
 
-	.header-search{
+	.header-search {
 		width: 100%;
 		justify-content: center;
 		margin: 5px 0;
 	}
 
-	.header-search input{
+	.header-search input {
 		padding-left: 10px;
 		width: 70%;
 	}
 
-	#notFoundMessage{
+	#notFoundMessage {
 		grid-column: 1 / -1;
 		text-align: center;
 		width: 100%;
 		margin: 40px 0;
 		font-size: 18px;
 		color: #014f86;
+	}
+
+	.buy-btn:active,
+	.category-btn:active,
+	.category-btnall:active {
+		transform: scale(0.95);
+		filter: brightness(0.8);
+		transition: 0.1s;
 	}
 }
