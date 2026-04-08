@@ -3,94 +3,98 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>FishingShop</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Всё для рыбалки</title>
 	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 	<header class="header">
-		<div class="logo">FishingShop</div>
+		<div class="header-left">
+			<a href="index.html">
+				<img src="images/logo-icon.png" alt="Логотип" class="logo-img">
+			</a>
+		</div>
+
 		<nav class="menu">
-			<a href="#hero">Главная</a>
-			<a href="#product">Товары</a>
-			<a href="#features">О нас</a>
+			<a href="index.html">Главная</a>
+			<a href="catalog.html">Товары</a>
+			<a href="#feature">О нас</a>
 			<a href="#footer">Контакты</a>
 		</nav>
 	</header>
 
 	<section class="hero" id="hero">
 		<div class="hero-content">
-			<h1>Лучший магазин рыбалки</h1>
-			<p>Удочки, снасти и все для вашего улова!</p>
-			<button><a href="#product">Перейти в каталог</a></button>
-		</div>
-		<div class="hero-image">
-			<img src="images/fishing-hero.png" alt="Улов">
-		</div>
-	</section>
+			<h1>Всё для рыбалки</h1>
+			<p>Удочки, приманки и всё для вашего улова!</p>
 
-	<section class="product" id="product">
-		<h2>Наши товары</h2>
-		<div class="product-grid">
-			<div class="product-card">
-				<img src="images/rod.png" alt="Удочка">
-				<h3>Удочка “ProFishing”</h3>
-				<p>От 1200 ₽</p>
-				<button>Купить</button>
+			<div class="hero-buttons">
+				<button class="hero-button" id="catalogBtn">Перейти в каталог</button>
+				<button class="hero-button-secondary" id="moreBtn">Подробнее</button>
 			</div>
-			<div class="product-card">
-				<img src="images/bait.png" alt="Приманка">
-				<h3>Набор приманок</h3>
-				<p>От 500 ₽</p>
-				<button>Купить</button>
-			</div>
-			<div class="product-card">
-				<img src="images/box.png" alt="Ящик для снастей">
-				<h3>Ящик для снастей</h3>
-				<p>От 2500 ₽</p>
-				<button>Купить</button>
+
+			<div class="hero-benefits">
+				<span>Большой выбор</span>
+				<span>Качественные товары</span>
+				<span>Лучшие цены</span>
 			</div>
 		</div>
 	</section>
 
-	<section class="features" id="features">
+	<section class="features" id="feature">
 		<div class="feature">
 			<img src="images/assortment.png" alt="Ассортимент">
 			<h3>Широкий ассортимент</h3>
 			<p>Удочки, приманки и всё для рыбалки в одном месте</p>
 		</div>
-		<div class="feature">
+
+		<div class="feature quality-feature">
 			<img src="images/quality.png" alt="Качество">
 			<h3>Качественные товары</h3>
 			<p>Только проверенные бренды и снасти</p>
+
+			<div class="quality-badge">100%</div>
 		</div>
+
 		<div class="feature">
 			<img src="images/support.png" alt="Советы">
 			<h3>Помощь и советы</h3>
-			<p>Наши спициалист поможет выбрать подходящие снасти</p>
+			<p>Наш специалист поможет выбрать подходящие снасти</p>
 		</div>
-		<div class="feature">
-			<img src="images/location.png" alt="Магазин">
-			<h3>Удобное расположение</h3>
-			<p>Легко найти наш магазин в селе</p>
-		</div>
+
+		<a href="https://yandex.md/maps/104927/transnistria/?ll=29.792891%2C46.642741&mode=poi&poi%5Bpoint%5D=29.792519%2C46.642680&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D70025384905&z=17.6"
+			target="_blank" class="feature-link">
+			<div class="feature">
+				<img src="images/location.png" alt="Магазин">
+				<h3>Удобное местоположение</h3>
+				<p>Легко найти наш магазин в селе</p>
+			</div>
+		</a>
 	</section>
 
 	<footer class="footer" id="footer">
-		<div class="footer-logo">
-			<h2>Всё для рыбалки</h2>
+		<div class="footer-container">
+
+			<div class="footer-left">
+				<p>Всё для рыбалки - лучшие снасти для вашего улова</p>
+			</div>
+
+			<div class="footer-center">
+				<h3>Контакты</h3>
+				<p>Село Глиное ул.Синько, 90</p>
+				<p>+373 779 5-14-50</p>
+			</div>
+
+			<div class="footer-right">
+				<h3>Соцсети</h3>
+				<a href="#">Instagram</a>
+				<a href="#">Telegram</a>
+				<a href="#">WatsApp</a>
+			</div>
 		</div>
-		<div class="footer-contacts">
-			<p>Село Глиное, ул.Синько, 90</p>
-			<p> +373 77951450</p>
-		</div>
-		<div class="footer-socials">
-			<a href="#">Instagram</a>
-			<a href="#">Telegram</a>
-			<a href="#">WhatsApp</a>
-		</div>
-		<p class="footer-copy">&copy; 2026 Раболовный магазин. Все права защищены.</p>
 	</footer>
+	<script src="main.js"></script>
 </body>
 
 </html>
