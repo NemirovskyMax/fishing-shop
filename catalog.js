@@ -77,6 +77,30 @@ document.addEventListener("DOMContentLoaded", function () {
 		clearSkeletons();
 	}
 
+	document.addEventListener('click', function (event) {
+		// Проверяем, что нажали именно на кнопку "купить"
+		if (event.target && event.target.classList.contains('buy-btn')) {
+
+			// Находим карточку этого товара
+			const card = event.target.closest('.catalog-card');
+
+			// Берем название товара из заголовка h3
+			const itemName = card.querySelector('h3').innerText;
+
+			// Номер дедушки (укажи нужный без плюса)
+			const phoneNumber = "37377951450";
+
+			// Сообщение
+			const message = `Здравствуйте! Подскажите, есть ли в наличии: "${itemName}"?`;
+
+			// Ссылка
+			const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+			// Открываем
+			window.open(whatsappUrl, '_blank');
+		}
+	});
+
 	// Поиск по кнопке
 	searchBtn.addEventListener("click", () => {
 		visibleLimit = 6;
